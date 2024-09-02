@@ -8,3 +8,11 @@
 --create sequence booking_sequence start with 1 increment by 1;
 INSERT INTO Booking(id) VALUES (nextval('booking_sequence'));
 INSERT INTO Booking(id) VALUES (nextval('booking_sequence'));
+INSERT INTO Booking(id) VALUES (nextval('booking_sequence'));
+
+INSERT INTO Flight(id, bookingId, flightFrom, flightTo) VALUES (nextval('flight_sequence'), 1, 'Jandira', 'Osasco');
+INSERT INTO Flight(id, bookingId, flightFrom, flightTo) VALUES (nextval('flight_sequence'), 2, 'Sao Paulo', 'Cuiaba');
+INSERT INTO Flight(id, bookingId, flightFrom, flightTo) VALUES (nextval('flight_sequence'), 3, 'Belo Horizonte', 'Tokyo');
+
+INSERT INTO Hotel(id, bookingId, nights) VALUES (nextval('hotel_sequence'), 1, 3);
+INSERT INTO Hotel(id, bookingId, nights) VALUES (nextval('hotel_sequence'), 2, 5);

@@ -1,10 +1,15 @@
 package com.brnasc.quarkus.monolith.booking.api.model;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+
 
 @Entity
+@SequenceGenerator(name = "booking_sequence", sequenceName = "booking_sequence", allocationSize = 1)
 public class Booking extends PanacheEntityBase {
 
     @Id

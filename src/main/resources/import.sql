@@ -5,6 +5,6 @@
 -- insert into myentity (id, field) values(3, 'field-3');
 -- alter sequence myentity_seq restart with 4;
 
-create sequence booking_sequence start with 1 increment by 1;
+--create sequence booking_sequence start with 1 increment by 1;
 INSERT INTO Booking(id) VALUES (nextval('booking_sequence'));
 INSERT INTO Booking(id) VALUES (nextval('booking_sequence'));

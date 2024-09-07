@@ -16,3 +16,4 @@ INSERT INTO Flight(id, bookingId, flightFrom, flightTo) VALUES (nextval('flight_
 
 INSERT INTO Hotel(id, bookingId, nights) VALUES (nextval('hotel_sequence'), 1, 3);
 INSERT INTO Hotel(id, bookingId, nights) VALUES (nextval('hotel_sequence'), 2, 5);
+INSERT INTO Hotel(id, bookingId, nights) VALUES (nextval('hotel_sequence'), 3, 7);

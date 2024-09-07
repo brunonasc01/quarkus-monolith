@@ -11,11 +11,15 @@ import jakarta.persistence.SequenceGenerator;
 @SequenceGenerator(name = "hotel_sequence", sequenceName = "hotel_sequence", allocationSize = 1)
 public class Hotel extends PanacheEntityBase {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hotel_sequence")
-    public Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hotel_sequence")
+  public Long id;
 
-    public Long bookingId;
+  public Long bookingId;
 
-    public Integer nights;
+  public Integer nights;
+
+  public static Hotel findByBookingId(Long bookingId) {
+    return find("bookingId", bookingId).firstResult();
+  }
 }

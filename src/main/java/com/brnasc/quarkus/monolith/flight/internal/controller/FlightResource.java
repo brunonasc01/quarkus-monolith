@@ -9,31 +9,37 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-
 import java.util.List;
 
 @Path("flight")
 public class FlightResource {
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Flight> flights() {
-        return Flight.listAll();
-    }
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<Flight> flights() {
+    return Flight.listAll();
+  }
 
-    @GET
-    @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Flight retrieveFlight(@PathParam("id") Long id) {
-        return Flight.findById(id);
-    }
+  @GET
+  @Path("/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Flight retrieveFlight(@PathParam("id") Long id) {
+    return Flight.findById(id);
+  }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Transactional
-    public Flight createFlight(Flight flight) {
-        flight.persist();
-        return flight;
-    }
+  @GET
+  @Path("/booking/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Flight retrieveByBooking(@PathParam("id") Long id) {
+    return Flight.findByBookingId(id);
+  }
+
+  @POST
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  @Transactional
+  public Flight createFlight(Flight flight) {
+    flight.persist();
+    return flight;
+  }
 }
